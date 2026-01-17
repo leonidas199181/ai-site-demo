@@ -3,7 +3,7 @@ console.log("网站已加载");
 // 设置API基础URL（根据环境动态设置）
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://ai-site-demo.onrender.com';
+    : 'https://ai-site-demo-ehil.onrender.com';
 
 console.log('API Base URL:', API_BASE_URL);
 

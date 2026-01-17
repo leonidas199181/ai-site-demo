@@ -1,5 +1,12 @@
 console.log("网站已加载");
 
+// 设置API基础URL（根据环境动态设置）
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : 'https://ai-site-demo.onrender.com';
+
+console.log('API Base URL:', API_BASE_URL);
+
 // 显示toast提示
 function showToast(message) {
     const toast = document.createElement('div');
@@ -54,7 +61,7 @@ document.getElementById('registerBtn').addEventListener('click', async function(
     const password = document.getElementById('registerPassword').value;
 
     try {
-        const response = await fetch('/api/register', {
+        const response = await fetch(`${API_BASE_URL}/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,7 +88,7 @@ document.getElementById('loginBtn').addEventListener('click', async function() {
     const password = document.getElementById('loginPassword').value;
 
     try {
-        const response = await fetch('/api/login', {
+        const response = await fetch(`${API_BASE_URL}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
